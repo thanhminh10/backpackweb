@@ -19,7 +19,8 @@ type Props = {
 export default function ProductInfo(prop: Props) {
   const { product } = prop;
   const productData = product;
-
+  console.log(product);
+  
   const breadcrumbRoutes = [
     {
       label: "Trang chủ",

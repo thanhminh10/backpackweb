@@ -116,6 +116,8 @@ const CustomSwiper: React.FC<CustomSwiperProps> = ({
     // Xử lý trong trường hợp không có imageUrl hợp lệ
     console.log("Invalid imageUrl");
   }
+  console.log(119,backgroundImage);
+  
 
   return (
     <div style={{ backgroundColor: `${bg}` }}>

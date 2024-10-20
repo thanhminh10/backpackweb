@@ -52,20 +52,19 @@ export const removeTags = (str: string) => {
   return str.replace(/(<([^>]+)>)/gi, " ");
 };
 export const RemoveLink = (str: string) => {
-  const baseUrl = process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT || "";
-
-  const formattedStr = str.replace(/\s/g, "%20");
-
-  if (formattedStr && formattedStr.includes("https://")) {
-    // Nếu là một URL đầy đủ, chỉ thay thế domain
-    const strRegex = baseUrl + formattedStr.replace(/^.*\/\/[^\/]+/, "");
-    return strRegex;
-  } else if (formattedStr.startsWith("/")) {
-    // Nếu là một đường dẫn tương đối bắt đầu bằng "/", thêm baseUrl vào
-    return baseUrl + formattedStr;
+  const baseUrlAdmin = "https://eshopadmin.s500.vn/_next/image";
+  const baseUrlApi = "https://eshopapi.s500.vn";
+  
+  // Check if it's a relative path
+  if (str.startsWith("/uploads")) {
+    // Encode the URL part for the 'url' parameter
+    const encodedUrl = encodeURIComponent(baseUrlApi + str);
+    
+    // Construct the final URL with the required parameters
+    return `${baseUrlAdmin}?url=${encodedUrl}&w=1080&q=75`;
   } else {
-    // Trường hợp khác, trả về chuỗi gốc hoặc xử lý tùy theo yêu cầu
-    return baseUrl + "/" + formattedStr;
+    // Handle other cases if needed
+    return str;
   }
 };
 

@@ -11,6 +11,7 @@ const ProductImages: React.FC<ProductImagesProps> = ({
   mainImage,
   thumbnails,
 }) => {
+  
   const mainImg = mainImage?.url ? RemoveLink(mainImage?.url) : '';
   const [selectedImage, setSelectedImage] = useState<string>(mainImg);
 
