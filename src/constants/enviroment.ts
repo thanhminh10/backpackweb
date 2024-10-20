@@ -1,0 +1,1 @@
+export const SHOP_ID = process.env.NEXT_PUBLIC_SHOP_ID

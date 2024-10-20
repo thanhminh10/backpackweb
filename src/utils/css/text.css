@@ -1,0 +1,7 @@
+.text_error {
+  @apply text-red-500;
+}
+
+.text-normal {
+  @apply text-16 font-400 text-neutral-gray-80;
+}

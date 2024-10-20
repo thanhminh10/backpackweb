@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url(../utils/css/input.css);
+@import url(../utils/css/button.css);
+@import url(../utils/css/table.css);
+@import url(../utils/css/section.css);
+@import url(../utils/css/icon.css);
+@import url(../utils/css/text.css);
+@import url(../utils/css/selected.css);
+@import url(../utils/css/cardbrand.css);
+
+
+body {
+    font-family: 'Mulish', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+.dot-filled {
+    width: 8px;
+    height: 8px;
+    background:  #C4C4C4;
+    border-radius: 50%; /* Makes the div a circle */
+    display: inline-block; /* Ensures it doesn't take up a full line */
+    z-index: 40;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out; 
+}
+
+
+
+.dot-filled.active {
+    background: rgba(165, 13, 18, 1);
+    animation: dotPulse 0.6s ease-in-out; /* Trigger animation when active */
+}
+
+.dot-filled::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 28px; /* Increase clickable area */
+    height: 28px; /* Increase clickable area */
+    background: transparent; /* Invisible background */
+    z-index: -1; /* Keep it behind the dot */
+}
+
+@keyframes dotPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2); /* Slightly increase the size */
+    }
+    100% {
+        transform: scale(1); /* Back to original size */
+    }
+}
+
+
+.item-navbar:hover .icon svg path {
+    fill: white;
+}
+
+.container {
+    max-width: 100%; /* Chiều rộng tối đa của container */
+   
+}
+
+  
+.inner-container {
+    width: 100%;
+    max-width: 100%; 
+    margin: 0 auto;
+}
+.product-content-detail strong 
+{
+    --tw-text-opacity: 1;
+    color: rgb(33 39 42 / var(--tw-text-opacity));
+    font-weight: 400;
+    font-size: 20px !important;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.product-content-detail p,
+.product-content-detail div,
+.product-content-detail span
+{
+    font-family: Mulish;
+    font-size: 16px !important;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: left;
+    color: #21272A !important;
+}
+.sidebar_item:hover svg {
+    background-color: #EBF4F6;
+    color: rgb(16 125 167 / var(--tw-text-opacity));
+    stroke: rgb(16 125 167 / var(--tw-text-opacity)); /* Thay đổi màu stroke khi hover */
+}
+
+.sidebar_item:hover svg path , .sidebar_item:hover svg rect {
+    stroke: rgb(16 125 167 / var(--tw-text-opacity)); /* Đảm bảo stroke của path là màu trắng khi hover */
+}
+
+.sidebar_item .icon {
+    transition: all 0.3s ease;
+  }
+  
+.sidebar_item .sidebar_item.group-hover\:stroke-white:hover {
+    stroke: rgb(16 125 167 / var(--tw-text-opacity));
+}
+
+.contact_form input {
+    transition: border-bottom-color 0.3s ease; /* Thêm hiệu ứng chuyển đổi màu */
+}
+  
+.contact_form input:focus {
+    outline: none; /* Loại bỏ viền mặc định */
+    border-bottom: 2px solid rgb(165 13 18 / var(--tw-bg-opacity)); /* Thay đổi màu viền dưới khi focus */
+}
+
+.contact_form textarea:focus {
+    outline: none; /* Loại bỏ viền mặc định */
+    border: 2px solid rgb(165 13 18 / var(--tw-bg-opacity)); /* Thay đổi màu viền dưới khi focus */
+}
+
+@import url(../utils/css/responsive.css);
+
+@media (max-width: 1023px) {
+    .banner-wrapper {
+        height: 150px !important ;
+       
+    }
+    .banner-wrapper .banner-img {
+        height: 100% !important;
+    }
+    .inner-container {
+        width: 100%;
+        max-width:  100%; /* 80px padding mỗi bên */
+        margin: 0 auto;
+    }
+    .header_title_section {
+        font-size: 20px;
+    }
+}
+
+
+
+@media (min-width: 1024px) and (max-width: 1599px)  {
+    .inner-container {
+        width: 100%;
+        max-width: calc(100% - 160px); /* 80px padding mỗi bên */
+        margin: 0 auto;
+    }
+}
+
+
+@media (min-width: 1600px) {
+    .inner-container {
+        max-width: 1536px;
+        margin: 0 auto;
+    }
+}
+
+

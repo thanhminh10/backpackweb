@@ -1,0 +1,11 @@
+
+.input_base {
+  @apply flex h-12 px-4 py-3 items-center gap-3 self-stretch rounded-lg bg-white placeholder:italic text-base text-neutral-gray-60 outline-none placeholder:text-base placeholder:font-300 
+}
+.textarea_base {
+  @apply flex h-20 px-4 py-2 items-start gap-3 self-stretch rounded-lg border border-white bg-white outline-none  placeholder:italic placeholder:text-base placeholder:font-300 
+}
+
+.input_wrapper {
+  @apply flex flex-col justify-end items-start gap-1 px-0 py-1 flex-[1_0_0] w-full;
+}
